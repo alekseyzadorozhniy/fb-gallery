@@ -1,0 +1,12 @@
+//$color: #76daff;
+$color: rgba(130,134,204,1);
+svg {
+    position: fixed;
+    width: 70px;
+    height: 20px;
+    top: 50%;
+    margin-top: -10px;
+    left: 50%;
+    margin-left: -35px;
+    rect { fill: $color; }
+}

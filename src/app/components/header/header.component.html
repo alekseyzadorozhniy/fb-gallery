@@ -1,0 +1,14 @@
+<header class="page-header">
+    <div class="home">
+        <a href="/">Home</a>
+    </div>
+
+    <div class="dropdown profile-menu-wr float-right">
+        <img [src]="user?.picture.data.url" class="avatar dropdown-toggle" id="drMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" alt="">
+        <span class="user-name">{{user?.first_name}} {{user?.last_name | slice:0:1}}.</span>
+        <div class="dropdown-menu" aria-labelledby="drMenu">
+            <a class="dropdown-item" (click)="showStat()">Statistics</a>
+            <a class="dropdown-item" (click)="logout()">Logout</a>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,22 @@
+<div class="albums-list-page container" infiniteScroll (scrolled)="loadAlbums()">
+    <div class="placeholder-wr" *ngIf="!model.length">
+        <h1>Albums page</h1>
+    </div>
+
+    <div class="row no-gutters">
+        <div class="col-xs-6" *ngFor="let item of model;">
+            <div class="album-card" (click)="goToUrl(['albums',item.id])">
+                <img class="cover" [src]="item.photo" alt="">
+                <div class="info-wr">
+                    <div class="name">{{ item.name }}</div>
+                    <div class="counts">
+                        <span>{{ item.count }} photos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="spinner-wr" *ngIf="isLoading">
+        <spinner [fixed]="false"></spinner>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+.chart-container {
+    position: relative;
+    min-height: 300px;
+    padding: 40px 15px;
+
+    .close-btn {
+        position: absolute;
+        top: 5px;
+        right: 15px;
+        font-size: 40px;
+        font-weight: 300;
+        color: #777b96;
+        line-height: 40px;
+
+        &:hover {
+            cursor: pointer;
+            color: darken(#777b96, 25);
+        }
+    }
+}

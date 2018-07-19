@@ -1,0 +1,121 @@
+.overflow-text-hidden {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.center-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photos-list-page {
+    padding: 30px 10px;
+
+    .placeholder-wr {
+        display: flex;
+        height: calc(100vh - 60px);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .photo-card {
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+        margin: 7px;
+
+        a {
+            outline: none;
+            .photo {
+                height: 268px;
+                width: 524px;
+                object-fit: cover;
+                border: solid 1px rgba(255, 255, 255, 1);
+            }
+        }
+
+        .info-wr {
+            position: absolute;
+            max-height: 200px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            bottom: 0;
+            left: 0;
+            font-size: 16px;
+            width: 100%;
+            padding: 15px 25px;
+
+            .name {
+                @extend .overflow-text-hidden;
+                font-weight: 500;
+                font-size: 1em;
+                line-height: 1.5;
+                color: rgba(255, 255, 255, 1);
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .photos-list-page {
+        padding: 15px;
+        .photo-card {
+            margin: 0 0 15px 0;
+            a {
+                .photo {
+                    height: calc(50vw - 15px);
+                    width: calc(100vw - 30px);
+                }
+            }
+        }
+    }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+    .photos-list-page {
+        .photo-card {
+            .info-wr {
+                font-size: 14px;
+            }
+
+            margin: 5px;
+            a {
+                .photo {
+                    height: 126px;
+                    width: 250px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .photos-list-page {
+        .photo-card {
+            a {
+                .photo {
+                    height: 168px;
+                    width: 336px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .photos-list-page {
+        .photo-card {
+            a {
+                .photo {
+                    height: 228px;
+                    width: 456px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .photos-list-page {
+        padding: 30px;
+    }
+}

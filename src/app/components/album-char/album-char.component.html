@@ -1,0 +1,9 @@
+<div class="chart-container">
+    <div class="header">
+        <div class="close-btn" (click)="close()">×</div>
+    </div>
+
+    <div *ngIf="!isLoading" style="display: block">
+        <canvas baseChart [datasets]="dataset" [options]="options" [legend]="false" chartType="bar"></canvas>
+    </div>
+</div>

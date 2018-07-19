@@ -1,0 +1,108 @@
+.overflow-text-hidden {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.albums-list-page {
+    padding: 30px 10px;
+
+    .placeholder-wr {
+        display: flex;
+        height: calc(100vh - 60px);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .album-card {
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+        margin: 7px;
+
+        .cover {
+            height: 268px;
+            width: 524px;
+            object-fit: cover;
+            border: solid 1px rgba(255, 255, 255, 1);
+        }
+
+        .info-wr {
+            position: absolute;
+            max-height: 200px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 25px;
+
+            .name {
+                @extend .overflow-text-hidden;
+                font-weight: 500;
+                font-size: 1rem;
+                line-height: 1.5;
+                color: rgba(255, 255, 255, 1);
+            }
+
+            .counts {
+                @extend .overflow-text-hidden;
+                font-weight: 400;
+                font-size: 0.8rem;
+                line-height: 1.5;
+                color: rgba(255, 255, 255, 1);
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .albums-list-page {
+        padding: 15px;
+        .album-card {
+            margin: 0 0 15px 0;
+            .cover {
+                height: calc(50vw - 15px);
+                width: calc(100vw - 30px);
+            }
+        }
+    }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+    .albums-list-page {
+        .album-card {
+            margin: 5px;
+            .cover {
+                height: 126px;
+                width: 250px;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .albums-list-page {
+        .album-card {
+            .cover {
+                height: 168px;
+                width: 336px;
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .albums-list-page {
+        .album-card {
+            .cover {
+                height: 228px;
+                width: 456px;
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .albums-list-page {
+        padding: 30px;
+    }
+}

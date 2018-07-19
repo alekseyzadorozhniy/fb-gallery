@@ -1,0 +1,21 @@
+<div class="photos-list-page container" infiniteScroll (scrolled)="loadData()">
+    <div class="placeholder-wr" *ngIf="!model.length">
+        <h1>Photos page</h1>
+    </div>
+
+    <div class="row no-gutters">
+        <div class="col-xs-6" *ngFor="let item of model;">
+            <div class="photo-card">
+                <a fancybox [caption]="item.name" [href]="item.photo">
+                    <img class="photo" [src]="item.photo" alt="" />
+                </a>
+                <div class="info-wr">
+                    <div class="name">{{ item.name }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="spinner-wr" *ngIf="isLoading">
+        <spinner [fixed]="false"></spinner>
+    </div>
+</div>
